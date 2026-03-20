@@ -6,8 +6,8 @@ const achievements = [
   {
     title: 'First Runner Up',
     event: 'National Level Paper Presentation',
-    org: 'Chennai Institute of Technology (CIT)',
-    date: '2025',
+    org: 'Coimbatore Institute of Technology (CIT)',
+    date: '2026',
     iconColor: 'text-cyber-blue',
     borderColor: 'border-cyber-blue',
     shadowColor: 'shadow-[0_0_15px_rgba(0,245,255,0.4)]'
@@ -15,8 +15,8 @@ const achievements = [
   {
     title: 'Second Runner Up',
     event: 'Coding Relay',
-    org: 'Technical Symposium',
-    date: '2024',
+    org: 'Technical Symposium,Coimbatore Institute of Technology (CIT)',
+    date: '2026',
     iconColor: 'text-cyber-purple',
     borderColor: 'border-cyber-purple',
     shadowColor: 'shadow-[0_0_15px_rgba(139,92,246,0.4)]'
@@ -25,7 +25,7 @@ const achievements = [
     title: 'Top 10 Innovators',
     event: 'GenAI Hackathon',
     org: 'AI Innovation Hub',
-    date: '2024',
+    date: '2025',
     iconColor: 'text-cyber-pink',
     borderColor: 'border-cyber-pink',
     shadowColor: 'shadow-[0_0_15px_rgba(255,0,255,0.4)]'
@@ -34,7 +34,7 @@ const achievements = [
     title: 'Grand Finalist',
     event: 'ZeroDay Hackathon',
     org: 'Cybersec Society',
-    date: '2023',
+    date: '2025',
     iconColor: 'text-cyber-blue',
     borderColor: 'border-cyber-blue',
     shadowColor: 'shadow-[0_0_15px_rgba(0,245,255,0.4)]'
