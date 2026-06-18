@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Achievements from './components/Achievements';
-import Contact from './components/Contact';
 import CursorGlow from './components/CursorGlow';
-import AIOrb from './components/AIOrb';
+
+const Projects = lazy(() => import('./components/Projects'));
+const Skills = lazy(() => import('./components/Skills'));
+const Achievements = lazy(() => import('./components/Achievements'));
+const Contact = lazy(() => import('./components/Contact'));
+const AIOrb = lazy(() => import('./components/AIOrb'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -34,7 +35,9 @@ function App() {
   return (
     <div className="bg-cyber-black text-gray-200 min-h-screen font-sans selection:bg-cyber-pink/30 selection:text-white relative">
       <CursorGlow />
-      <AIOrb />
+      <Suspense fallback={null}>
+        <AIOrb />
+      </Suspense>
 
       {/* Cyber Grid Background */}
       <div className="fixed inset-0 bg-cyber-grid bg-cyber-grid z-0 opacity-20 pointer-events-none"></div>
@@ -49,10 +52,12 @@ function App() {
       <main className="ml-16 md:ml-20 lg:ml-64 px-6 md:px-12 lg:px-24">
         <Hero />
         <About />
-        <Projects />
-        <Skills />
-        <Achievements />
-        <Contact />
+        <Suspense fallback={<div className="min-h-screen flex flex-col items-center justify-center text-cyber-blue animate-pulse font-mono py-20">Loading Subsystems...</div>}>
+          <Projects />
+          <Skills />
+          <Achievements />
+          <Contact />
+        </Suspense>
       </main>
 
       {/* Footer */}

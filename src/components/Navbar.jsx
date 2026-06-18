@@ -28,8 +28,9 @@ const Navbar = () => {
           </div>
           <input 
             type="text" 
+            aria-label="Search systems"
             placeholder="Search systems..." 
-            className="bg-black/40 border border-cyber-blue/40 rounded-full py-2 pl-10 pr-4 w-48 lg:w-64 text-sm focus:outline-none focus:border-cyber-blue transition-all focus:shadow-[0_0_10px_rgba(0,245,255,0.3)] text-gray-200 placeholder-gray-500"
+            className="bg-black/40 border border-cyber-blue/40 rounded-full py-2 pl-10 pr-4 w-48 lg:w-64 text-sm focus:outline-none focus:border-cyber-blue focus-visible:ring-2 focus-visible:ring-cyber-blue transition-all focus:shadow-[0_0_10px_rgba(0,245,255,0.3)] text-gray-200 placeholder-gray-500"
           />
         </div>
       </div>
@@ -40,7 +41,7 @@ const Navbar = () => {
           <span className="text-xs font-mono text-green-400">System Online</span>
         </div>
         
-        <button className="relative text-gray-400 hover:text-cyber-blue transition-colors group">
+        <button aria-label="Notifications" className="relative text-gray-400 hover:text-cyber-blue focus-visible:ring-2 focus-visible:ring-cyber-blue rounded-full p-1 transition-colors group">
           <Bell size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(0,245,255,0.8)]" />
           <span className="absolute -top-1 -right-1 w-2 h-2 bg-cyber-pink rounded-full shadow-[0_0_5px_rgba(255,0,255,0.8)]"></span>
         </button>

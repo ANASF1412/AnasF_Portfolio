@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Brain, Cpu, Server, MapPin } from 'lucide-react';
+import { GraduationCap, Brain, Cpu, Server, MapPin, Download } from 'lucide-react';
+import resumePdf from '../assets/RESUME.pdf';
 
 const About = () => {
   return (
@@ -40,14 +41,25 @@ const About = () => {
             <div className="w-12 h-12 rounded-lg bg-cyber-blue/20 flex items-center justify-center border border-cyber-blue/50 text-cyber-blue shrink-0">
               <Brain size={24} />
             </div>
-            <div>
+            <div className="flex-1">
               <h3 className="text-2xl font-bold text-white mb-2">Neural Overview</h3>
               <p className="text-gray-300 leading-relaxed text-sm md:text-base">
                 I am a passionate and driven B.Tech student specializing in Computer Science and Business Systems. 
-                My development core is wired for problem-solving with a strong foundation in <span className="text-cyber-blue font-semibold">Data Structures & Algorithms</span>. 
-                I actively architect scalable web solutions using the <span className="text-cyber-purple font-semibold">MERN stack</span> and integrate 
-                cutting-edge <span className="text-cyber-pink font-semibold">AI/ML models</span> to build innovative digital products.
+                My development core is wired for problem-solving with a strong foundation in <span className="text-cyber-blue font-bold">Data Structures & Algorithms</span>. 
+                I actively architect scalable web solutions using the <span className="text-[#a78bfa] font-bold">MERN stack</span> and integrate 
+                cutting-edge <span className="text-[#ff66ff] font-bold">AI/ML models</span> to build innovative digital products.
               </p>
+              <div className="mt-6">
+                <a 
+                  href={resumePdf} 
+                  download="Anas_F_Resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyber-blue/10 border border-cyber-blue text-cyber-blue font-medium hover:bg-cyber-blue/20 hover:shadow-[0_0_15px_rgba(0,245,255,0.4)] transition-all duration-300 relative z-30"
+                >
+                  <Download size={16} /> Download Resume
+                </a>
+              </div>
             </div>
           </div>
 
@@ -84,7 +96,7 @@ const About = () => {
               <div className="absolute top-0 -left-[9px] w-4 h-4 bg-black border-2 border-cyber-purple rounded-full shadow-[0_0_10px_rgba(139,92,246,0.8)]"></div>
               
               <div className="mb-2">
-                <span className="px-2 py-1 text-xs font-mono text-cyber-purple bg-cyber-purple/10 rounded border border-cyber-purple/30 inline-block mb-3">
+                <span className="px-2 py-1 text-xs font-mono text-[#a78bfa] bg-cyber-purple/10 rounded border border-cyber-purple/30 inline-block mb-3">
                   2024 - 2028
                 </span>
                 <h4 className="text-xl font-bold text-white">B.Tech - Computer Science & Business Systems</h4>

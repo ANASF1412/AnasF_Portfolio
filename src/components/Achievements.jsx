@@ -1,6 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Trophy, Star, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Trophy, Star, ChevronRight, X, Image as ImageIcon } from 'lucide-react';
+import { mediaData } from '../data/mediaData';
 
 const achievements = [
   {
@@ -42,6 +43,8 @@ const achievements = [
 ];
 
 const Achievements = () => {
+  const [selectedMedia, setSelectedMedia] = useState(null);
+
   return (
     <section id="achievements" className="py-20 min-h-screen relative z-10 flex flex-col justify-center">
       <div className="mb-16">
@@ -121,6 +124,90 @@ const Achievements = () => {
           ))}
         </div>
       </div>
+
+      {/* Media Gallery Section */}
+      <div className="mt-32 relative z-10">
+        <div className="mb-12 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white tracking-wider flex items-center justify-center gap-3 mb-2">
+            <ImageIcon className="text-cyber-pink" size={28} />
+            MEDIA.<span className="text-cyber-blue drop-shadow-[0_0_8px_rgba(0,245,255,0.8)]">GALLERY</span>
+          </h2>
+          <p className="text-gray-400 font-mono text-sm">
+            Visual records of hackathons, awards, and milestones...
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          {mediaData.map((media) => (
+            <motion.div
+              layoutId={`media-${media.id}`}
+              key={media.id}
+              className={`relative overflow-hidden rounded-xl cursor-pointer group glass-panel border-white/10 ${media.colSpan} ${media.rowSpan}`}
+              onClick={() => setSelectedMedia(media)}
+              whileHover={{ scale: 0.98 }}
+            >
+              <div className="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+              <img 
+                src={media.image} 
+                alt={media.caption} 
+                loading="lazy"
+                className="w-full h-full object-cover min-h-[250px] group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                <p className="text-white text-sm font-medium line-clamp-2">{media.caption}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedMedia && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedMedia(null)}
+              className="absolute inset-0 bg-black/90 backdrop-blur-md"
+            />
+            
+            <motion.div
+              layoutId={`media-${selectedMedia.id}`}
+              className="relative w-full max-w-5xl max-h-[90vh] rounded-2xl overflow-hidden glass-panel border border-white/20 shadow-[0_0_30px_rgba(0,245,255,0.3)] z-10 flex flex-col"
+            >
+              <button
+                onClick={() => setSelectedMedia(null)}
+                aria-label="Close lightbox"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/50 text-white hover:text-cyber-pink hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-cyber-pink transition-colors backdrop-blur-md"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="relative flex-1 overflow-hidden bg-black/50 flex items-center justify-center">
+                <img 
+                  src={selectedMedia.image} 
+                  alt={selectedMedia.caption} 
+                  className="max-w-full max-h-[75vh] object-contain"
+                />
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="p-6 bg-black/80 border-t border-white/10"
+              >
+                <p className="text-white text-lg md:text-xl font-medium flex items-center gap-3">
+                  <Star className="text-cyber-blue" size={20} />
+                  {selectedMedia.caption}
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

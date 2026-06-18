@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { ChevronDown, Terminal, Code2, Database, Award } from 'lucide-react';
-import profileImg from '../assets/profile.jpg';
+import profileImg from '../assets/profile.jpeg';
 
 const Hero = () => {
   return (
@@ -87,7 +87,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center gap-6 mb-8 border-b border-white/10 pb-6 relative z-10">
               <div className="relative">
                 <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden neon-border z-10 relative bg-black">
-                  <img src={profileImg} alt="Anas F" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
+                  <img src={profileImg} alt="Anas F Professional Headshot" loading="eager" fetchPriority="high" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
                   <div className="absolute inset-0 bg-cyber-blue mix-blend-overlay opacity-30 group-hover:opacity-0 transition-opacity duration-300"></div>
                 </div>
                 {/* Orbital Ring */}

@@ -24,13 +24,13 @@
     @apply border border-cyber-purple shadow-[0_0_10px_rgba(139,92,246,0.5)];
   }
   .neon-text {
-    @apply text-cyber-blue drop-shadow-[0_0_8px_rgba(0,245,255,0.8)];
+    @apply text-cyber-blue drop-shadow-[0_0_8px_rgba(0,245,255,0.8)] font-semibold;
   }
   .neon-text-pink {
-    @apply text-cyber-pink drop-shadow-[0_0_8px_rgba(255,0,255,0.8)];
+    @apply text-[#ff66ff] drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] font-semibold;
   }
   .neon-text-purple {
-    @apply text-cyber-purple drop-shadow-[0_0_8px_rgba(139,92,246,0.8)];
+    @apply text-[#a78bfa] drop-shadow-[0_0_8px_rgba(139,92,246,0.8)] font-semibold;
   }
 }
 
