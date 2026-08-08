@@ -1,5 +1,5 @@
+import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
-import { runAudit as runPortfolioAudit } from "./audit-portfolio-assets.js";
 
 /**
  * Vite plugin: portfolio data → asset mapping validator.
@@ -11,7 +11,7 @@ import { runAudit as runPortfolioAudit } from "./audit-portfolio-assets.js";
  * - Fails the production build when any *error*-level issue is present, so a
  *   card with a missing or mismatched image can never ship.
  */
-import type { AssetIssue as AuditIssue } from "../src/lib/asset-audit.js";
+import type { AssetIssue as AuditIssue } from "../src/lib/asset-audit";
 
 const VIRTUAL_ID = "virtual:asset-audit";
 const RESOLVED_ID = "\0" + VIRTUAL_ID;
@@ -26,10 +26,17 @@ const C = {
 };
 
 function runAudit(root: string) {
+  const res = spawnSync("bun", ["scripts/audit-portfolio-assets.ts", "--json"], {
+    cwd: root,
+    encoding: "utf8",
+  });
+  if (res.status !== 0 || !res.stdout) {
+    return { issues: [], failed: true, stderr: res.stderr || "audit did not run" };
+  }
   try {
-    return { issues: runPortfolioAudit(), failed: false };
+    return { issues: JSON.parse(res.stdout.trim()), failed: false };
   } catch {
-    return { issues: [], failed: true, stderr: "audit did not run" };
+    return { issues: [], failed: true, stderr: res.stdout };
   }
 }
 

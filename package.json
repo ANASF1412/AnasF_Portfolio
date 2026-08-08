@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "audit:assets": "npx --yes tsx scripts/audit-portfolio-assets.ts --strict"
+    "audit:assets": "bun scripts/audit-portfolio-assets.ts --strict"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

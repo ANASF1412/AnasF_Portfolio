@@ -17,7 +17,7 @@ import {
   profile,
   projects,
   timeline,
-} from "./portfolio-data.js";
+} from "./portfolio-data";
 
 export type AssetIssueLevel = "error" | "warning";
 
@@ -230,15 +230,6 @@ export function auditPortfolioAssets(existingPaths: string[]): AssetIssue[] {
   for (const path of existingPaths) {
     if (!path.startsWith("/images/")) continue;
     if (referenced.has(path)) continue;
-    const sourceStem = path.replace(/-w\d+\.(?:webp|avif)$/i, "");
-    if (
-      sourceStem !== path &&
-      [...referenced].some((referencedPath) =>
-        referencedPath.replace(/\.[^/.]+$/, "") === sourceStem,
-      )
-    ) {
-      continue;
-    }
     issues.push({
       level: "warning",
       group: "unmapped",

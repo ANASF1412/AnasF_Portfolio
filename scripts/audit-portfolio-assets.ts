@@ -15,7 +15,7 @@ import {
   auditPortfolioAssets,
   summariseIssues,
   type AssetIssue,
-} from "../src/lib/asset-audit.js";
+} from "../src/lib/asset-audit";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PUBLIC_DIR = join(ROOT, "public");
