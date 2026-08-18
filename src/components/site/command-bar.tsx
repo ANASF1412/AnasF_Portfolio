@@ -105,9 +105,16 @@ export function CommandBar() {
             <FileDown className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Resume</span>
           </button>
-          <span aria-label="No new notifications" role="status" className="relative grid h-11 w-11 place-items-center rounded-full border border-border text-muted-foreground">
+          <span
+            aria-label="No new notifications"
+            role="status"
+            className="relative grid h-11 w-11 place-items-center rounded-full border border-border text-muted-foreground"
+          >
             <Bell className="h-3.5 w-3.5" />
-            <span aria-hidden className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-magenta" />
+            <span
+              aria-hidden
+              className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-magenta"
+            />
           </span>
         </div>
       </div>

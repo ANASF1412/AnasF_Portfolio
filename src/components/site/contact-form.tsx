@@ -25,8 +25,9 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
-  const set = (k: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setValues((v) => ({ ...v, [k]: e.target.value }));
+  const set =
+    (k: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setValues((v) => ({ ...v, [k]: e.target.value }));
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -55,7 +56,10 @@ export function ContactForm() {
         fd.append("from_name", "Portfolio contact form");
         fd.append("replyto", email);
         const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: fd });
-        const data = (await res.json().catch(() => null)) as { success?: boolean; message?: string } | null;
+        const data = (await res.json().catch(() => null)) as {
+          success?: boolean;
+          message?: string;
+        } | null;
         if (!res.ok || !data?.success) throw new Error(data?.message ?? String(res.status));
       } else if (profile.contactEndpoint) {
         const res = await fetch(profile.contactEndpoint, {
@@ -81,7 +85,6 @@ export function ContactForm() {
       toast.error(msg);
     }
   }
-
 
   if (status === "sent") {
     return (

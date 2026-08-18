@@ -8,9 +8,12 @@ const C = 2 * Math.PI * R;
 export function HudWidget() {
   const calm = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const p = useSpring(scrollYProgress, calm
-    ? { stiffness: 1000, damping: 100, mass: 0.1 }
-    : { stiffness: 120, damping: 26, mass: 0.4 });
+  const p = useSpring(
+    scrollYProgress,
+    calm
+      ? { stiffness: 1000, damping: 100, mass: 0.1 }
+      : { stiffness: 120, damping: 26, mass: 0.4 },
+  );
 
   return (
     <div className="pointer-events-none fixed bottom-20 right-4 z-40 md:bottom-8 md:right-8">

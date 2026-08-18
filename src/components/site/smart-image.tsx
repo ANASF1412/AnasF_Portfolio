@@ -84,9 +84,7 @@ export function SmartImage({
       ) : null}
 
       {state === "error" ? (
-        <div
-          className="absolute inset-0 grid place-items-center overflow-hidden border border-border bg-surface/80 backdrop-blur-md"
-        >
+        <div className="absolute inset-0 grid place-items-center overflow-hidden border border-border bg-surface/80 backdrop-blur-md">
           <div className="grid-veil absolute inset-0 opacity-40" aria-hidden />
           <div className="relative flex flex-col items-center gap-2 px-4 text-center">
             <ImageOff className="h-5 w-5 text-cyan/70" aria-hidden />

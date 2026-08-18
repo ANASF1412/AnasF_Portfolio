@@ -6,6 +6,7 @@ auto-detects the `vercel` preset and emits `.vercel/output` (Build Output API v3
 ## One-time setup on Vercel
 
 Project → Settings → General:
+
 - Framework Preset: **Other** (this is what `vercel.json` sets with `"framework": null`)
 - Build Command: `npm run build`
 - Install Command: `npm install`

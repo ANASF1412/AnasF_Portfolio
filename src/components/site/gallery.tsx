@@ -106,9 +106,7 @@ export function Gallery() {
                         label={g.caption.split(" — ")[0]}
                         width={800}
                         height={600}
-                        imgClassName={
-                          g.fit === "contain" ? "!object-contain" : ""
-                        }
+                        imgClassName={g.fit === "contain" ? "!object-contain" : ""}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         priority={i === 0}
                       />
@@ -155,18 +153,13 @@ export function Gallery() {
                 />
               </div>
               <div className="flex items-center justify-between gap-4 px-5 py-4">
-                <figcaption
-                  id="gallery-lightbox-caption"
-                  className="text-sm text-muted-foreground"
-                >
+                <figcaption id="gallery-lightbox-caption" className="text-sm text-muted-foreground">
                   {active.caption}
                 </figcaption>
                 <div className="flex shrink-0 items-center gap-2">
                   <button
                     type="button"
-                    onClick={() =>
-                      setOpen((i) => ((i ?? 0) - 1 + gallery.length) % gallery.length)
-                    }
+                    onClick={() => setOpen((i) => ((i ?? 0) - 1 + gallery.length) % gallery.length)}
                     aria-label="Previous photo"
                     className="grid h-11 w-11 place-items-center rounded-full border border-border text-muted-foreground transition-colors duration-300 hover:border-cyan/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan"
                   >

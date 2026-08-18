@@ -100,7 +100,7 @@ export function SystemSidebar() {
               key={item.id}
               href={`/#${item.id}`}
               aria-label={item.label}
-               className={`grid h-11 w-11 place-items-center rounded-xl transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+              className={`grid h-11 w-11 place-items-center rounded-xl transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                 on ? "bg-secondary text-cyan" : "text-muted-foreground"
               }`}
             >

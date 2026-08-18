@@ -106,9 +106,11 @@
     color-mix(in oklab, var(--violet) 22%, transparent),
     transparent 70%
   );
-  --glow-violet: 0 0 0 1px color-mix(in oklab, var(--violet) 35%, transparent),
+  --glow-violet:
+    0 0 0 1px color-mix(in oklab, var(--violet) 35%, transparent),
     0 18px 60px -20px color-mix(in oklab, var(--violet) 55%, transparent);
-  --glow-cyan: 0 0 0 1px color-mix(in oklab, var(--cyan) 35%, transparent),
+  --glow-cyan:
+    0 0 0 1px color-mix(in oklab, var(--cyan) 35%, transparent),
     0 18px 60px -22px color-mix(in oklab, var(--cyan) 45%, transparent);
   --shadow-panel: 0 18px 45px -28px oklch(0.25 0.04 264 / 0.35);
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -198,13 +200,14 @@
   :where(a, button, input, textarea, select, [tabindex]):focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+    box-shadow:
+      0 0 0 2px var(--background),
+      0 0 0 4px var(--ring);
   }
 
   p {
     text-wrap: pretty;
   }
-
 
   ::selection {
     background: color-mix(in oklab, var(--cyan) 35%, transparent);
@@ -225,7 +228,6 @@
       scroll-behavior: auto !important;
     }
   }
-
 }
 
 @utility text-gradient {

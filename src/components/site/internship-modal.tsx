@@ -4,13 +4,7 @@ import type { Internship } from "@/lib/portfolio-data";
 import { SmartImage } from "./smart-image";
 
 /** Rich detail overlay for a single internship. */
-export function InternshipModal({
-  item,
-  onClose,
-}: {
-  item: Internship;
-  onClose: () => void;
-}) {
+export function InternshipModal({ item, onClose }: { item: Internship; onClose: () => void }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);

@@ -15,7 +15,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }): Project => {
     const project = projects.find((p) => p.slug === params.slug);
@@ -23,9 +22,7 @@ export const Route = createFileRoute("/work/$slug")({
     return project;
   },
   head: ({ loaderData }: { loaderData?: Project }) => {
-    const title = loaderData
-      ? `${loaderData.name} — Case study | Anas F`
-      : "Case study | Anas F";
+    const title = loaderData ? `${loaderData.name} — Case study | Anas F` : "Case study | Anas F";
     const description = loaderData?.tldr ?? "Engineering case study by Anas F.";
     return {
       meta: [
@@ -113,11 +110,15 @@ function CaseStudy() {
                     </DialogHeader>
                     <dl className="grid gap-3 border-t border-border pt-4 text-sm sm:grid-cols-2">
                       <div>
-                        <dt className="font-mono text-xs uppercase text-muted-foreground">Compute</dt>
+                        <dt className="font-mono text-xs uppercase text-muted-foreground">
+                          Compute
+                        </dt>
                         <dd className="mt-1 text-foreground">AWS EC2 · t2.micro</dd>
                       </div>
                       <div>
-                        <dt className="font-mono text-xs uppercase text-muted-foreground">Orchestration</dt>
+                        <dt className="font-mono text-xs uppercase text-muted-foreground">
+                          Orchestration
+                        </dt>
                         <dd className="mt-1 text-foreground">Docker Compose · systemd</dd>
                       </div>
                       <div>
@@ -125,7 +126,9 @@ function CaseStudy() {
                         <dd className="mt-1 text-foreground">Nginx reverse proxy</dd>
                       </div>
                       <div>
-                        <dt className="font-mono text-xs uppercase text-muted-foreground">Services</dt>
+                        <dt className="font-mono text-xs uppercase text-muted-foreground">
+                          Services
+                        </dt>
                         <dd className="mt-1 text-foreground">FastAPI · React</dd>
                       </div>
                     </dl>
@@ -174,7 +177,6 @@ function CaseStudy() {
               </dl>
             </section>
           </Reveal>
-
 
           <Reveal delay={0.05}>
             <section className="mt-16">
@@ -225,22 +227,27 @@ function CaseStudy() {
                     className="w-full rounded-lg border border-border object-cover"
                   />
                   <figcaption className="px-2 pb-1 pt-3 text-sm leading-relaxed text-muted-foreground">
-                    End-to-end telemetry ingestion, inference pipeline, experiment tracking, and drift monitoring flow.
+                    End-to-end telemetry ingestion, inference pipeline, experiment tracking, and
+                    drift monitoring flow.
                   </figcaption>
                 </figure>
               </section>
             </Reveal>
           ) : null}
 
-
-
           <Reveal delay={0.05}>
             <section className="mt-14">
               <h2 className="term-label">Impact</h2>
               <ul className="mt-6 space-y-3">
                 {p.impact.map((item) => (
-                  <li key={item} className="flex gap-3 text-base leading-relaxed text-muted-foreground">
-                    <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+                  <li
+                    key={item}
+                    className="flex gap-3 text-base leading-relaxed text-muted-foreground"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan"
+                    />
                     {item}
                   </li>
                 ))}

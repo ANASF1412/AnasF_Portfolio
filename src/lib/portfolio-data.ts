@@ -1,4 +1,3 @@
-
 export const profile = {
   name: "ANAS F",
   role: "AI/ML Engineer · Full-Stack Systems",
@@ -22,11 +21,7 @@ export const profile = {
 
   headline: "AI/ML Engineer · Full-Stack Systems",
   sub: "B.Tech CSBS undergraduate (CGPA: 8.50) with 2 internships and 6 award-winning builds. From training YOLOv8 models at NIELIT to orchestrating automated MLOps workflows with DVC, MLflow, and AWS — I build software that turns models into scalable, usable applications.",
-  roles: [
-    "MLOps Pipelines",
-    "Computer Vision & NLP",
-    "Scalable Web Architectures",
-  ],
+  roles: ["MLOps Pipelines", "Computer Vision & NLP", "Scalable Web Architectures"],
   /** Centralised media paths — see public/images/. */
   heroImage: "/images/profile/anas-hero.jpg",
 };
@@ -102,7 +97,7 @@ export const internships: Internship[] = [
   },
   {
     slug: "nielit-ai-intern",
-    role: "AI & Web Intern",
+    role: "Research Intern(Data Analytics,AI%Web Development in django )",
     org: "NIELIT Calicut",
     period: "2025",
     summary:
@@ -159,7 +154,8 @@ export const projects: Project[] = [
     tagline: "Urban flood early-warning platform with a fully automated MLOps lifecycle.",
     imageAlt:
       "FloodGuard AI operations console showing Mumbai metro flood risk: active alert counters, 24h rainfall, model confidence, a live Leaflet risk map with severity-coded zones, and a sorted active-alerts feed.",
-    imageCaption: "FloodGuard AI — ops console with live risk map, alert feed and model-confidence monitoring.",
+    imageCaption:
+      "FloodGuard AI — ops console with live risk map, alert feed and model-confidence monitoring.",
     hasImage: true,
     imageFit: "contain",
     imageAspect: "dashboard",
@@ -185,9 +181,7 @@ export const projects: Project[] = [
       { value: "Drift Alerting", label: "Evidently AI (PSI > 0.25)" },
     ],
 
-
-    tldr:
-      "An urban flood early-warning system where the model is treated as a production asset: versioned data, tracked experiments, containerized serving, and continuous drift monitoring.",
+    tldr: "An urban flood early-warning system where the model is treated as a production asset: versioned data, tracked experiments, containerized serving, and continuous drift monitoring.",
     problem:
       "Flood prediction models rot silently. Without data versioning, experiment tracking, and drift monitoring, a model that scored well once quietly degrades before anyone notices.",
     approach: [
@@ -203,7 +197,10 @@ export const projects: Project[] = [
       "Drift reports surface degradation before forecast quality visibly drops.",
     ],
     artifacts: [
-      { title: "DVC + MLflow pipeline", detail: "Reproducible data and experiment lineage per run." },
+      {
+        title: "DVC + MLflow pipeline",
+        detail: "Reproducible data and experiment lineage per run.",
+      },
       { title: "Dockerized serving", detail: "REST inference container with graceful fallback." },
       { title: "Drift dashboard", detail: "Evidently AI reports wired into the CI schedule." },
     ],
@@ -242,8 +239,7 @@ export const projects: Project[] = [
       { value: "Real-time Telemetry", label: "<200ms API Response (FastAPI + Redis Cache)" },
     ],
 
-    tldr:
-      "A conversational finance assistant that answers in English, Tamil, Hindi, or Telugu, grounded in retrieved market context via RAG over Hugging Face and IBM Watsonx models. Took 2nd place at a national paper presentation.",
+    tldr: "A conversational finance assistant that answers in English, Tamil, Hindi, or Telugu, grounded in retrieved market context via RAG over Hugging Face and IBM Watsonx models. Took 2nd place at a national paper presentation.",
     problem:
       "Financial guidance in India is English-first and jargon-heavy. Non-English speakers get either nothing or a generic chatbot that hallucinates numbers.",
     approach: [
@@ -258,9 +254,18 @@ export const projects: Project[] = [
       "RAG grounding plus Redis caching cut unsupported numeric claims and repeat-query latency.",
     ],
     artifacts: [
-      { title: "Multilingual routing", detail: "Detect → translate → retrieve → respond in the source language." },
-      { title: "RAG grounding", detail: "Hugging Face + IBM Watsonx retrieval context injected per query." },
-      { title: "Async pipeline", detail: "Celery workers with Redis broker and cache behind JWT-scoped sessions." },
+      {
+        title: "Multilingual routing",
+        detail: "Detect → translate → retrieve → respond in the source language.",
+      },
+      {
+        title: "RAG grounding",
+        detail: "Hugging Face + IBM Watsonx retrieval context injected per query.",
+      },
+      {
+        title: "Async pipeline",
+        detail: "Celery workers with Redis broker and cache behind JWT-scoped sessions.",
+      },
     ],
     keyDecision:
       "Implemented Redis caching and Celery task queues to handle asynchronous PDF report generation and RAG retrieval without blocking primary user request threads.",
@@ -286,8 +291,7 @@ export const projects: Project[] = [
       { value: "Context Processing", label: "<1.2s TTI (LangChain Pipeline + Vector Index)" },
     ],
 
-    tldr:
-      "An intelligent emotional wellness companion combining NLP sentiment analysis with a hybrid dialog engine (Rasa + heuristic fallback), rule-based clinical scoring, and crisis detection with adaptive UI alerts.",
+    tldr: "An intelligent emotional wellness companion combining NLP sentiment analysis with a hybrid dialog engine (Rasa + heuristic fallback), rule-based clinical scoring, and crisis detection with adaptive UI alerts.",
     problem:
       "Wellness chatbots fail exactly when they matter most — the model errors out, or it misses language that signals a crisis and replies with small talk.",
     approach: [
@@ -302,7 +306,10 @@ export const projects: Project[] = [
       "Crisis detection escalates the UI instead of burying the signal in chat history.",
     ],
     artifacts: [
-      { title: "Hybrid dialog engine", detail: "Rasa primary path with deterministic heuristic fallback." },
+      {
+        title: "Hybrid dialog engine",
+        detail: "Rasa primary path with deterministic heuristic fallback.",
+      },
       { title: "Clinical scoring layer", detail: "Rule-based scores over NLP sentiment output." },
       { title: "Burnout analytics", detail: "Plotly trend views over longitudinal check-ins." },
     ],
@@ -318,7 +325,8 @@ export const projects: Project[] = [
     tagline: "Automatic number-plate recognition pipeline built on YOLOv8 and OCR.",
     imageAlt:
       "ANPR System web interface with a drag-and-drop vehicle image uploader and a Detect Number Plate action, plus a logs view for past detections.",
-    imageCaption: "ANPR System — upload interface for YOLOv8 plate detection with OCR decoding and detection logs.",
+    imageCaption:
+      "ANPR System — upload interface for YOLOv8 plate detection with OCR decoding and detection logs.",
     hasImage: true,
     year: "2025",
     role: "Computer vision engineer",
@@ -330,8 +338,7 @@ export const projects: Project[] = [
       { value: "OpenCV", label: "Preprocessing pipeline" },
     ],
 
-    tldr:
-      "A two-stage vehicle number-plate recognition pipeline: a custom-trained YOLOv8 detector locates the plate, OCR reads it, and the result is normalized for downstream lookup.",
+    tldr: "A two-stage vehicle number-plate recognition pipeline: a custom-trained YOLOv8 detector locates the plate, OCR reads it, and the result is normalized for downstream lookup.",
     problem:
       "Off-the-shelf OCR reads a full frame and returns noise. Plates need to be localized first, and Indian plate formats need normalization before any lookup is reliable.",
     approach: [
@@ -344,7 +351,10 @@ export const projects: Project[] = [
       "Pipeline runs frame-by-frame on video input, not just still images.",
     ],
     artifacts: [
-      { title: "Custom YOLOv8 detector", detail: "Trained on annotated plate imagery with augmentation." },
+      {
+        title: "Custom YOLOv8 detector",
+        detail: "Trained on annotated plate imagery with augmentation.",
+      },
       { title: "OCR normalization", detail: "Format-aware post-processing over raw OCR text." },
     ],
     keyDecision:
@@ -371,8 +381,7 @@ export const projects: Project[] = [
       { value: "Role-based", label: "JWT auth (3 roles)" },
     ],
 
-    tldr:
-      "A MERN marketplace where verified green projects raise capital from retail investors. I designed the schema, built the JWT role system, and shipped a geospatial discovery dashboard.",
+    tldr: "A MERN marketplace where verified green projects raise capital from retail investors. I designed the schema, built the JWT role system, and shipped a geospatial discovery dashboard.",
     problem:
       "Small sustainability projects have no credible place to present verifiable impact data, and retail investors have no way to compare them side by side. Discovery happens on spreadsheets and WhatsApp.",
     approach: [
@@ -387,9 +396,18 @@ export const projects: Project[] = [
       "Deployed on Vercel with preview-per-branch review flow.",
     ],
     artifacts: [
-      { title: "Role-scoped API", detail: "Express middleware chain enforcing JWT claims per route group." },
-      { title: "Geospatial discovery", detail: "Leaflet clustering wired to the same filter state as the list." },
-      { title: "Impact dashboard", detail: "Aggregated ESG telemetry rendered from one MongoDB pipeline." },
+      {
+        title: "Role-scoped API",
+        detail: "Express middleware chain enforcing JWT claims per route group.",
+      },
+      {
+        title: "Geospatial discovery",
+        detail: "Leaflet clustering wired to the same filter state as the list.",
+      },
+      {
+        title: "Impact dashboard",
+        detail: "Aggregated ESG telemetry rendered from one MongoDB pipeline.",
+      },
     ],
     keyDecision:
       "Selected Leaflet.js over heavy GIS SDKs to keep initial load times under 1.5s while providing real-time geospatial project tagging.",
@@ -413,8 +431,7 @@ export const projects: Project[] = [
       { value: "1 form", label: "From questionnaire to allocation" },
       { value: "Django", label: "Server-rendered, no client state bugs" },
     ],
-    tldr:
-      "A Django app that turns a short risk questionnaire into a concrete allocation using trained classifiers, localized to Indian instruments instead of US-centric defaults.",
+    tldr: "A Django app that turns a short risk questionnaire into a concrete allocation using trained classifiers, localized to Indian instruments instead of US-centric defaults.",
     problem:
       "Generic robo-advisors assume US instruments and US tax logic. Local first-time investors get advice they cannot act on.",
     approach: [
@@ -427,8 +444,14 @@ export const projects: Project[] = [
       "Recommendation logic is unit-testable and swappable without touching views.",
     ],
     artifacts: [
-      { title: "Risk classifier", detail: "Feature-engineered model mapping answers to allocation buckets." },
-      { title: "Explainable output", detail: "Each allocation shown with the driver that produced it." },
+      {
+        title: "Risk classifier",
+        detail: "Feature-engineered model mapping answers to allocation buckets.",
+      },
+      {
+        title: "Explainable output",
+        detail: "Each allocation shown with the driver that produced it.",
+      },
     ],
     github: "https://github.com/ANASF1412/Finance-Investment-Planner",
     live: "https://finance-planner.vercel.app",
@@ -450,8 +473,7 @@ export const projects: Project[] = [
       { value: "C++ → RN", label: "Full hardware-to-UI ownership" },
       { value: "Finalist", label: "ZeroDay Hackathon" },
     ],
-    tldr:
-      "Sustainable water purification hardware with a live mobile dashboard — I wrote the C++ firmware path and the React Native client reading the same Firebase stream.",
+    tldr: "Sustainable water purification hardware with a live mobile dashboard — I wrote the C++ firmware path and the React Native client reading the same Firebase stream.",
     problem:
       "A purification unit is only trustworthy if you can see what it is doing. Without telemetry, failures are discovered by taste.",
     approach: [
@@ -464,8 +486,14 @@ export const projects: Project[] = [
       "Turned an opaque hardware unit into an observable system with live status and alerting.",
     ],
     artifacts: [
-      { title: "Firmware telemetry", detail: "C++ sensor loop publishing to Firebase with backoff." },
-      { title: "Live mobile client", detail: "React Native subscription view with threshold alerting." },
+      {
+        title: "Firmware telemetry",
+        detail: "C++ sensor loop publishing to Firebase with backoff.",
+      },
+      {
+        title: "Live mobile client",
+        detail: "React Native subscription view with threshold alerting.",
+      },
     ],
     github: "",
     live: "",
@@ -486,14 +514,62 @@ export type Certification = {
 
 /** Source order = display order: newest first, undated last. */
 const certificationList: Certification[] = [
-  { id: "physical-ai-architecture", name: "Physical AI Architecture Foundations: Designing Autonomous Machines with Agentic AI", issuer: "LinkedIn Learning", year: "2026", image: "/images/certifications/physical-ai-architecture.png" },
-  { id: "claude-code-in-action", name: "Claude Code in Action by Anthropic", issuer: "LinkedIn Learning · Anthropic", year: "2026", image: "/images/certifications/claude-code-in-action.png" },
-  { id: "nptel-design-thinking", name: "Design Thinking — A Primer · Elite Silver, Top 5%", issuer: "NPTEL · IIT Madras · SWAYAM", year: "2026", image: "/images/certifications/nptel-design-thinking.png" },
-  { id: "nielit-internship", name: "Internship in Data Analytics, AI and Web Development in Django", issuer: "NIELIT Calicut", year: "2025", image: "/images/certifications/nielit-internship.png" },
-  { id: "hackerrank-sql-intermediate", name: "SQL (Intermediate)", issuer: "HackerRank", year: "2025", image: "/images/certifications/hackerrank-sql-intermediate.png" },
-  { id: "hackerrank-sql-basic", name: "SQL (Basic)", issuer: "HackerRank", year: "2025", image: "/images/certifications/hackerrank-sql-basic.png" },
-  { id: "iitb-cpp-training", name: "C++ Training", issuer: "IIT Bombay · Spoken Tutorial Project", year: "2024", image: "/images/certifications/iitb-cpp-training.png" },
-  { id: "iitb-c-training", name: "C Training", issuer: "IIT Bombay · Spoken Tutorial Project", year: "2024", image: "/images/certifications/iitb-c-training.png" },
+  {
+    id: "physical-ai-architecture",
+    name: "Physical AI Architecture Foundations: Designing Autonomous Machines with Agentic AI",
+    issuer: "LinkedIn Learning",
+    year: "2026",
+    image: "/images/certifications/physical-ai-architecture.png",
+  },
+  {
+    id: "claude-code-in-action",
+    name: "Claude Code in Action by Anthropic",
+    issuer: "LinkedIn Learning · Anthropic",
+    year: "2026",
+    image: "/images/certifications/claude-code-in-action.png",
+  },
+  {
+    id: "nptel-design-thinking",
+    name: "Design Thinking — A Primer · Elite Silver, Top 5%",
+    issuer: "NPTEL · IIT Madras · SWAYAM",
+    year: "2026",
+    image: "/images/certifications/nptel-design-thinking.png",
+  },
+  {
+    id: "nielit-internship",
+    name: "Internship in Data Analytics, AI and Web Development in Django",
+    issuer: "NIELIT Calicut",
+    year: "2025",
+    image: "/images/certifications/nielit-internship.png",
+  },
+  {
+    id: "hackerrank-sql-intermediate",
+    name: "SQL (Intermediate)",
+    issuer: "HackerRank",
+    year: "2025",
+    image: "/images/certifications/hackerrank-sql-intermediate.png",
+  },
+  {
+    id: "hackerrank-sql-basic",
+    name: "SQL (Basic)",
+    issuer: "HackerRank",
+    year: "2025",
+    image: "/images/certifications/hackerrank-sql-basic.png",
+  },
+  {
+    id: "iitb-cpp-training",
+    name: "C++ Training",
+    issuer: "IIT Bombay · Spoken Tutorial Project",
+    year: "2024",
+    image: "/images/certifications/iitb-cpp-training.png",
+  },
+  {
+    id: "iitb-c-training",
+    name: "C Training",
+    issuer: "IIT Bombay · Spoken Tutorial Project",
+    year: "2024",
+    image: "/images/certifications/iitb-c-training.png",
+  },
 ];
 
 /** Deterministic: newest year first, undated last, stable within a year. */
@@ -624,8 +700,7 @@ export const timeline: Achievement[] = [
     title: "Grand Finalist · ZeroDay Hackathon",
     detail: "IoT water purification telemetry system.",
     image: "/images/achievements/zeroday-hackathon.jpg",
-    imageAlt:
-      "Three students working on laptops during the ZeroDay hackathon finals.",
+    imageAlt: "Three students working on laptops during the ZeroDay hackathon finals.",
   },
   {
     id: "github-ignite",
@@ -659,7 +734,5 @@ export const gallery = timeline.map((t) => ({
   src: t.image,
   alt: t.imageAlt,
   caption: `${t.title} — ${t.detail}`,
-  fit: (screenshotAchievements.has(t.id) ? "contain" : "cover") as
-    | "contain"
-    | "cover",
+  fit: (screenshotAchievements.has(t.id) ? "contain" : "cover") as "contain" | "cover",
 }));

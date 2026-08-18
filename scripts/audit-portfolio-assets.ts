@@ -11,11 +11,7 @@
  */
 import { readdirSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import {
-  auditPortfolioAssets,
-  summariseIssues,
-  type AssetIssue,
-} from "../src/lib/asset-audit";
+import { auditPortfolioAssets, summariseIssues, type AssetIssue } from "../src/lib/asset-audit";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PUBLIC_DIR = join(ROOT, "public");

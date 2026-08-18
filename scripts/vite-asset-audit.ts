@@ -40,7 +40,10 @@ function runAudit(root: string) {
   }
 }
 
-function report(issues: AuditIssue[], logger: { info: (m: string) => void; warn: (m: string) => void; error: (m: string) => void }) {
+function report(
+  issues: AuditIssue[],
+  logger: { info: (m: string) => void; warn: (m: string) => void; error: (m: string) => void },
+) {
   const errors = issues.filter((i) => i.level === "error");
   const warnings = issues.filter((i) => i.level === "warning");
 
@@ -112,10 +115,7 @@ export function portfolioAssetAudit() {
         }
       };
 
-      const watched = [
-        resolve(root, "public"),
-        resolve(root, "src/lib/portfolio-data.ts"),
-      ];
+      const watched = [resolve(root, "public"), resolve(root, "src/lib/portfolio-data.ts")];
       server.watcher.add(watched);
       const onChange = (file: string) => {
         if (watched.some((w) => file.startsWith(w))) refresh();

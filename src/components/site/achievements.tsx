@@ -105,7 +105,9 @@ const AwardsTimeline = memo(function AwardsTimeline() {
       </motion.ol>
 
       <div className="flex items-center justify-between border-t border-border bg-surface/25 px-4 py-2 font-mono text-[0.55rem] uppercase tracking-[0.14em] text-muted-foreground sm:px-5">
-        <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-cyan" /> awards indexed</span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-cyan" /> awards indexed
+        </span>
         <span>SYS.OK</span>
       </div>
     </div>
@@ -117,7 +119,10 @@ export function Achievements() {
     <section id="achievements" className="relative border-t border-border py-12 sm:py-16">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr]">
         <Reveal>
-          <p className="term-label"><span className="text-magenta">&gt;</span> SYSTEM.AWARDS<span className="caret text-magenta">_</span></p>
+          <p className="term-label">
+            <span className="text-magenta">&gt;</span> SYSTEM.AWARDS
+            <span className="caret text-magenta">_</span>
+          </p>
           <h2 className="mt-4 text-[clamp(1.9rem,4vw,2.6rem)] font-semibold leading-tight">
             Wins that came with a working build attached.
           </h2>
@@ -126,7 +131,10 @@ export function Achievements() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="term-label"><span className="text-magenta">&gt;</span> CODING PROFILES & PROBLEM SOLVING<span className="caret text-magenta">_</span></p>
+          <p className="term-label">
+            <span className="text-magenta">&gt;</span> CODING PROFILES & PROBLEM SOLVING
+            <span className="caret text-magenta">_</span>
+          </p>
           <div className="mt-6 space-y-3">
             {codingProfiles.map((c) => (
               <a

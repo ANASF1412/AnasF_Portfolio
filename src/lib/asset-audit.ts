@@ -11,13 +11,7 @@
  * public-relative asset paths that exist. That keeps it usable from the Vite
  * plugin, a CLI script, and the dev-only browser overlay alike.
  */
-import {
-  certifications,
-  internships,
-  profile,
-  projects,
-  timeline,
-} from "./portfolio-data";
+import { certifications, internships, profile, projects, timeline } from "./portfolio-data";
 
 export type AssetIssueLevel = "error" | "warning";
 

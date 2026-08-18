@@ -94,9 +94,8 @@ export function Projects() {
                       fit={p.imageFit}
                       aspect={p.imageAspect}
                       priority={i === 0 && p.hasImage}
-                       className="mt-4"
+                      className="mt-4"
                     />
-
                   </div>
 
                   <div className="mt-auto flex shrink-0 flex-wrap gap-2 border-t border-border pt-4">
@@ -142,7 +141,8 @@ export function Projects() {
                 </>
               ) : (
                 <>
-                  Click to View More Projects ({remainingProjects.length}) <ChevronDown aria-hidden />
+                  Click to View More Projects ({remainingProjects.length}){" "}
+                  <ChevronDown aria-hidden />
                 </>
               )}
             </Button>
@@ -201,7 +201,9 @@ export function Projects() {
                                 <span className="font-display text-sm font-semibold leading-none text-foreground">
                                   {metric.value}
                                 </span>
-                                <span className="text-xs leading-relaxed text-muted-foreground">{metric.label}</span>
+                                <span className="text-xs leading-relaxed text-muted-foreground">
+                                  {metric.label}
+                                </span>
                               </li>
                             ))}
                           </ul>

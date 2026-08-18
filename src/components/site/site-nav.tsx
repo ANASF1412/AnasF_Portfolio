@@ -12,7 +12,6 @@ const sections = [
   { id: "contact", label: "Contact" },
 ];
 
-
 export function SiteNav() {
   const [active, setActive] = useState("projects");
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +56,6 @@ export function SiteNav() {
           ANAS<span className="text-cyan"> F</span>
         </Link>
 
-
         <div className="hidden items-center gap-1 md:flex">
           {sections.map((s) => (
             <a
@@ -85,7 +83,6 @@ export function SiteNav() {
             Resume
           </a>
         </div>
-
       </nav>
     </header>
   );

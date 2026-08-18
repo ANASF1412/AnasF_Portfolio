@@ -119,9 +119,7 @@ function PdfFallback() {
     <div className="grid h-full place-items-center px-6 py-10 text-center">
       <div className="max-w-sm">
         <FileDown className="mx-auto h-8 w-8 text-cyan" />
-        <p className="mt-4 text-sm text-foreground">
-          Your browser can't preview PDFs inline.
-        </p>
+        <p className="mt-4 text-sm text-foreground">Your browser can't preview PDFs inline.</p>
         <p className="mt-2 text-sm text-muted-foreground">
           Open the résumé in a new tab — it downloads instantly and reads fine on mobile.
         </p>

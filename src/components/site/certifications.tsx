@@ -41,7 +41,8 @@ export function Certifications() {
         <div className="min-w-0">
           <h3 className="text-sm font-medium leading-snug text-foreground">{c.name}</h3>
           <p className="mt-1.5 font-mono text-xs text-muted-foreground">
-            {c.issuer}{c.year ? ` · ${c.year}` : ""}
+            {c.issuer}
+            {c.year ? ` · ${c.year}` : ""}
           </p>
           <span className="mt-3 inline-flex rounded-full border border-cyan/30 bg-cyan-soft px-2.5 py-0.5 font-mono text-[0.6rem] uppercase tracking-widest text-cyan dark:bg-cyan-soft">
             {c.credentialUrl ? "Click to preview · verifiable" : "Click to preview"}
@@ -70,7 +71,15 @@ export function Certifications() {
               onClick={() => setExpanded((value) => !value)}
               className="min-h-11 rounded-full px-5"
             >
-              {expanded ? <>Show Fewer Credentials <ChevronUp aria-hidden /></> : <>Expand All Credentials ({remaining.length}) <ChevronDown aria-hidden /></>}
+              {expanded ? (
+                <>
+                  Show Fewer Credentials <ChevronUp aria-hidden />
+                </>
+              ) : (
+                <>
+                  Expand All Credentials ({remaining.length}) <ChevronDown aria-hidden />
+                </>
+              )}
             </Button>
           </div>
         ) : null}
@@ -130,24 +139,24 @@ export function Certifications() {
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-2">
-              {open.credentialUrl ? (
-                <a
-                  href={open.credentialUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-11 items-center gap-2 rounded-full border border-cyan/40 px-4 font-mono text-xs text-cyan transition-colors duration-300 hover:border-cyan hover:text-foreground focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                {open.credentialUrl ? (
+                  <a
+                    href={open.credentialUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-11 items-center gap-2 rounded-full border border-cyan/40 px-4 font-mono text-xs text-cyan transition-colors duration-300 hover:border-cyan hover:text-foreground focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    Verify <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                ) : null}
+                <button
+                  type="button"
+                  onClick={() => setOpen(null)}
+                  aria-label="Close certificate preview"
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border text-muted-foreground transition-colors duration-300 hover:border-magenta/60 hover:text-foreground focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  Verify <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ) : null}
-              <button
-                type="button"
-                onClick={() => setOpen(null)}
-                aria-label="Close certificate preview"
-                className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border text-muted-foreground transition-colors duration-300 hover:border-magenta/60 hover:text-foreground focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <X className="h-4 w-4" />
-              </button>
+                  <X className="h-4 w-4" />
+                </button>
               </div>
             </div>
           </div>

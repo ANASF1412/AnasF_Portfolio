@@ -60,7 +60,6 @@ function RoleSwitcher() {
   );
 }
 
-
 /** Portrait slot: drop /public/images/profile/anas-hero.jpg to replace the monogram. */
 function Avatar() {
   const calm = useReducedMotion();
@@ -180,9 +179,7 @@ export function Hero() {
         </div>
       </div>
 
-      <dl
-        className="relative mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-4 border-t border-border px-4 pt-6 sm:grid-cols-4 sm:px-6"
-      >
+      <dl className="relative mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-4 border-t border-border px-4 pt-6 sm:grid-cols-4 sm:px-6">
         {stats.map((s) => (
           <div key={s.label}>
             <dt className="font-display text-3xl font-semibold text-foreground">{s.value}</dt>

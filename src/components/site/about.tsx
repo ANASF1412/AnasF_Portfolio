@@ -9,7 +9,10 @@ export function About() {
     <section id="about" className="relative border-t border-border py-12 sm:py-16">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
         <Reveal>
-          <p className="term-label"><span className="text-magenta">&gt;</span> SYSTEM.OPERATOR<span className="caret text-magenta">_</span></p>
+          <p className="term-label">
+            <span className="text-magenta">&gt;</span> SYSTEM.OPERATOR
+            <span className="caret text-magenta">_</span>
+          </p>
           <h2 className="mt-4 text-balance text-[clamp(1.9rem,4vw,2.6rem)] font-semibold leading-tight">
             Concepts over checklists — systems that survive production.
           </h2>
