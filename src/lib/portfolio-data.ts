@@ -97,7 +97,7 @@ export const internships: Internship[] = [
   },
   {
     slug: "nielit-ai-intern",
-    role: "Research Intern(Data Analytics,AI%Web Development in django )",
+    role: "Research Intern(Data Analytics ,AI & Web Development in Django )",
     org: "NIELIT Calicut",
     period: "2025",
     summary:
